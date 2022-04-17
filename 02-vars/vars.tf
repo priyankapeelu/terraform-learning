@@ -55,3 +55,7 @@ output "sample2" {
   value = var.sample2
 }
 variable "URL" {}
+output "URL" {
+  value = var.URL
+}
+
