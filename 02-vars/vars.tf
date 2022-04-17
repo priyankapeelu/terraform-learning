@@ -42,3 +42,11 @@ variable "sample5" {
     boolean = true
   }
 }
+
+output "sample4-1" {
+  value = var.sample4[0]
+}
+
+output "sample5-1" {
+  value = var.sample5["number"]
+}
