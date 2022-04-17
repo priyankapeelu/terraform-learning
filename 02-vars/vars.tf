@@ -42,10 +42,3 @@ variable "sample5" {
     boolean = true
   }
 }
-
-<<<<<<< HEAD
-=======
-output "sample4-1" {
-  value = var.sample4[0]
-}
->>>>>>> origin/main
