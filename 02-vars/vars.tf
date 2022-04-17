@@ -43,3 +43,9 @@ variable "sample5" {
   }
 }
 
+<<<<<<< HEAD
+=======
+output "sample4-1" {
+  value = var.sample4[0]
+}
+>>>>>>> origin/main
