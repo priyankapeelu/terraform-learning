@@ -6,7 +6,7 @@ resource "aws_instance" "sample" {
     command = <<EOF
 sleep 60
 cd /home/centos/ansible
-ansible-playbook -i ${self.public_ip}, roboshop.yml -e
+ansible-playbook -i ${self.public_ip}, roboshop.yml -e HOST=all -e role_name=frontend -e ENV=dev
 EOF
   }
 }
