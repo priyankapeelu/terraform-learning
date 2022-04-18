@@ -3,7 +3,11 @@ resource "aws_instance" "sample" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [var.sg]
   provisioner "local-exec" {
-    command = "sleep 60; "
+    command = <<EOF
+sleep 60
+cd /home/centos/ansible
+ansible-playbook -i ${self.public_ip}, roboshop.yml -e
+EOF
   }
 }
 
