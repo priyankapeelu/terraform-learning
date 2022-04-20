@@ -1,8 +1,8 @@
 module "COMPONENT" {
   count      = length (var.COMPONENTS)
   source     = "./ec2"
-  COMPONENT  = var.COMPONENT[count.index]
-  APP_VERION = var.APP_VERSION[count.index]
+  COMPONENT  = var.COMPONENTS[count.index]
+  APP_VERSION = var.APP_VERSION[count.index]
 }
 
 
