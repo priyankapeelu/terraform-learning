@@ -1,6 +1,16 @@
-module "component" {
-  for_each    = var.ALL_COMPONENTS
-  source      = "./ec2"
-  COMPONENT   = each.key
-  APP_VERSION = each.value
+module "COMPONENT" {
+  count      = length (var.COMPONENTS)
+  source     = "./ec2"
+  COMPONENT  = var.COMPONENT[count.index]
+  APP_VERION = var.APP_VERSION[count.index]
 }
+
+
+
+
+
+
+
+
+
+
