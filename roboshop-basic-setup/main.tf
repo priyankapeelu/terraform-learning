@@ -1,12 +1,22 @@
 module "COMPONENT" {
-  count      = length (var.COMPONENTS)
-  source     = "./ec2"
-  COMPONENT  = var.COMPONENTS[count.index]
-  APP_VERSION = var.APP_VERSION[count.index]
+  count       =  var.ALL_COMPONENTS
+  source      =  "./ec2"
+  COMPONENT   =  each.key
+  APP_VERSION =  each.value
 }
 
 
-
+#resource "null_resource" "sample" {
+#  triggers = {
+#    abc = timestamp()
+#  }
+#  for_each = var.sample
+#  provisioner "local-exec" {
+#    command = <<EOF
+#echo COMPONENT = ${each.key}, APP_VERSION = ${each.value}
+#EOF
+#  }
+#}
 
 
 
